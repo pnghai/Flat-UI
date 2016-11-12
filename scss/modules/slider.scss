@@ -5,14 +5,14 @@
 // -------------------------
 
 .ui-slider {
-  .progress();
+  @include progress();
   margin-bottom: 20px;
   position: relative;
   cursor: pointer;
 }
 
 .ui-slider-handle {
-  background-color: @slider-handle-bg;
+  background-color: $slider-handle-bg;
   border-radius: 50%;
   cursor: pointer;
   height: 18px;
@@ -23,16 +23,16 @@
 
   &:hover,
   &:focus {
-    background-color: @slider-handle-hover-bg;
+    background-color: $slider-handle-hover-bg;
     outline: none;
   }
   &:active {
-    background-color: @slider-handle-active-bg;
+    background-color: $slider-handle-active-bg;
   }
 }
 
 .ui-slider-range {
-  background-color: @slider-range-bg;
+  background-color: $slider-range-bg;
   display: block;
   height: 100%;
   position: absolute;
@@ -42,7 +42,7 @@
 // Segments
 // -------------------------
 .ui-slider-segment {
-  background-color: @slider-segment-bg;
+  background-color: $slider-segment-bg;
   border-radius: 50%;
   height: 6px;
   width: 6px;
@@ -52,8 +52,8 @@
 // -------------------------
 .ui-slider-value {
   float: right;
-  font-size: @slider-value-font-size;
-  margin-top: @slider-height;
+  font-size: $slider-value-font-size;
+  margin-top: $slider-height;
 
   &.first {
     clear: left;
@@ -86,7 +86,7 @@
 // -------------------------
 
 .ui-slider-vertical {
-  width: @slider-height;
+  width: $slider-height;
 
   .ui-slider-handle {
     margin-left: -3px;

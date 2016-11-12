@@ -3,8 +3,8 @@
 // -------------------------------------------------
 
 .tile {
-  background-color: @tiles-bg;
-  border-radius: @tiles-border-radius;
+  background-color: $tiles-bg;
+  border-radius: $tiles-border-radius;
   padding: 14px;
   margin-bottom: 20px;
   position: relative;

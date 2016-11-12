@@ -8,16 +8,16 @@
   .tt-dropdown-menu {
     width: 100%;
     margin-top: 5px;
-    border: 2px solid @brand-secondary;
+    border: 2px solid $brand-secondary;
     padding: 5px 0;
-    background-color: @inverse;
-    border-radius: @border-radius-large;
+    background-color: $inverse;
+    border-radius: $border-radius-large;
   }
 
   .tt-suggestion {
     p {
       padding: 6px 14px;
-      font-size: ceil((@component-font-size-base * 0.933));
+      font-size: ceil(($component-font-size-base * 0.933));
       line-height: 1.429; // ~20px
       margin: 0;
     }
@@ -32,7 +32,7 @@
     &.tt-cursor {
       cursor: pointer;
       color: #fff;
-      background-color: mix(@brand-secondary, black, 85%);
+      background-color: mix($brand-secondary, black, 85%);
     }
   }
 }

@@ -1,6 +1,6 @@
 // Pagination variants
 
-@include pagination-variant($color, $hover, $active) {
+@mixin pagination-variant($color, $hover, $active) {
   & {
     background-color: $color;
 

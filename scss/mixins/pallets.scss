@@ -2,10 +2,10 @@
 //
 
 @include pallet-variant($first-color, $second-color) {
-  .palette-@{first-color} {
+  .palette-#{$first-color} {
     background-color: ~"@{@{first-color}}";
   }
-  .palette-@{second-color} {
+  .palette-#{$second-color} {
     background-color: ~"@{@{second-color}}";
   }
 }

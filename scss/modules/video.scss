@@ -11,7 +11,7 @@
   vertical-align: middle;
   overflow: hidden;
   backface-visibility: hidden;
-  border-top-radius: @vplayer-border-radius;
+  border-top-radius: $vplayer-border-radius;
   width: 100% !important;
   height: auto !important;
 
@@ -34,7 +34,7 @@
 .vjs-fullscreen {
   position: fixed;
   overflow: hidden;
-  z-index: @vplayer-fullscreen-zindex;
+  z-index: $vplayer-fullscreen-zindex;
   left: 0;
   top: 0;
   bottom: 0;
@@ -48,7 +48,7 @@
     .border-bottom-radius(0);
   }
   .vjs-tech {
-    background-color: @vplayer-fullscreen-bg;
+    background-color: $vplayer-fullscreen-bg;
   }
 }
 
@@ -60,17 +60,17 @@
   position: relative;
   width: 100%;
   max-height: 100%;
-  border-top-radius: @vplayer-border-radius;
+  border-top-radius: $vplayer-border-radius;
 }
 
 // Control bar
 .vjs-control-bar {
   position: relative;
   height: 47px;
-  color: @vplayer-control-bar-color;
-  background: @vplayer-control-bar-bg;
+  color: $vplayer-control-bar-color;
+  background: $vplayer-control-bar-bg;
   margin-top: -1px;
-  .border-bottom-radius(@vplayer-border-radius);
+  .border-bottom-radius($vplayer-border-radius);
   user-select: none;
 
   &.vjs-fade-out {
@@ -86,18 +86,18 @@
   bottom: 4em;
   left: 1em;
   right: 1em;
-  font-family: @font-family-base;
+  font-family: $font-family-base;
 }
 .vjs-text-track {
   display: none;
-  color: @vplayer-control-bar-color;
+  color: $vplayer-control-bar-color;
   font-size: 1.4em;
   text-align: center;
   margin-bottom: .1em;
-  background-color: @vplayer-text-track-bg;
+  background-color: $vplayer-text-track-bg;
 }
 .vjs-subtitles {
-  color: @inverse;
+  color: $inverse;
 }
 .vjs-captions {
   color: #fc6;
@@ -167,8 +167,8 @@
     &:after {
       position: absolute;
       font-family: "Flat-UI-Icons";
-      color: @vplaver-play-control-color;
-      font-size: floor((@component-font-size-base * 1.067)); // 16px
+      color: $vplaver-play-control-color;
+      font-size: floor(($component-font-size-base * 1.067)); // 16px
       top: 38%;
       left: 50%;
       margin: -0.5em 0 0 -0.5em;
@@ -186,7 +186,7 @@
   .vjs-paused & {
     &:hover {
       > div:before {
-        color: @vplaver-play-control-hover-color;
+        color: $vplaver-play-control-hover-color;
       }
     }
     > div {
@@ -202,7 +202,7 @@
   .vjs-playing & {
     &:hover {
       > div:after {
-        color: @vplaver-play-control-hover-color;
+        color: $vplaver-play-control-hover-color;
       }
     }
     > div {
@@ -239,18 +239,18 @@
   &:hover,
   &:focus {
     > div {
-      color: @vplaver-second-controls-hover-color;
+      color: $vplaver-second-controls-hover-color;
     }
   }
 
   > div {
     height: 18px;
-    color: @vplaver-second-controls-color;
+    color: $vplaver-second-controls-color;
 
     &:after,
     &:before {
       font-family: "Flat-UI-Icons";
-      font-size: floor((@component-font-size-base * 1.067)); // 16px
+      font-size: floor(($component-font-size-base * 1.067)); // 16px
       line-height: 18px;
       position: absolute;
       left: 50%;
@@ -298,7 +298,7 @@
   right: 160px;
   width: auto;
   top: 18px;
-  background: @vplaver-progress-bg;
+  background: $vplaver-progress-bg;
   border-radius: 32px;
 }
 
@@ -320,7 +320,7 @@
 }
 
 .vjs-play-progress {
-  background: @vplaver-play-progress-bg;
+  background: $vplaver-play-progress-bg;
   left: -1px;
   position: absolute;
   top: 0;
@@ -328,7 +328,7 @@
 }
 
 .vjs-load-progress {
-  background: @vplaver-load-progress-bg;
+  background: $vplaver-load-progress-bg;
 
   &[style*="100%"],
   &[style*="99%"] {
@@ -337,7 +337,7 @@
 }
 
 .vjs-seek-handle {
-  background-color: @vplayer-seek-handle-bg;
+  background-color: $vplayer-seek-handle-bg;
   width: 18px;
   height: 18px;
   top: 0;
@@ -354,19 +354,19 @@
   }
   &:hover,
   &:focus {
-    background-color: @vplayer-seek-handle-hover-bg;
+    background-color: $vplayer-seek-handle-hover-bg;
   }
   &:active {
-    background-color: @vplayer-seek-handle-active-bg;
+    background-color: $vplayer-seek-handle-active-bg;
   }
 }
 
 
 // Time control
 .vjs-time-controls {
-  font-family: @font-family-base;
+  font-family: $font-family-base;
   font-weight: 300;
-  font-size: floor((@component-font-size-base * 0.867)); // 13px
+  font-size: floor(($component-font-size-base * 0.867)); // 13px
   line-height: normal;
   width: auto;
   height: auto;
@@ -374,8 +374,8 @@
 }
 
 .vjs-time-divider {
-  color: @vplayer-time-divider-color;
-  font-size: ceil((@component-font-size-base * 0.933)); // 14px;
+  color: $vplayer-time-divider-color;
+  font-size: ceil(($component-font-size-base * 0.933)); // 14px;
   position: absolute;
   right: 114px;
   top: 11px;
@@ -391,7 +391,7 @@
 }
 
 .vjs-duration {
-  color: @vplayer-duration-color;
+  color: $vplayer-duration-color;
   right: 85px;
   top: 16px;
 }
@@ -405,17 +405,17 @@
   &:hover,
   &:focus {
     > div {
-      color: @vplaver-second-controls-hover-color;
+      color: $vplaver-second-controls-hover-color;
     }
   }
   > div {
     height: 18px;
-    color: @vplaver-second-controls-color;
+    color: $vplaver-second-controls-color;
 
     &:before {
       font-family: "Flat-UI-Icons";
       content: "\e619";
-      font-size: floor((@component-font-size-base * 1.067)); // 16px
+      font-size: floor(($component-font-size-base * 1.067)); // 16px
       line-height: 18px;
       position: absolute;
       left: 50%;
@@ -450,34 +450,34 @@
 
 .sharp-keyframes() {
   0% {
-    background-color: @vplayer-preloader-primary-bg;
+    background-color: $vplayer-preloader-primary-bg;
     border-radius: 10px;
     transform: rotate(0deg);
   }
   50% {
-    background-color: @vplayer-preloader-secondary-bg;
+    background-color: $vplayer-preloader-secondary-bg;
     border-radius: 0;
     transform: rotate(180deg);
   }
   100% {
-    background-color: @vplayer-preloader-primary-bg;
+    background-color: $vplayer-preloader-primary-bg;
     border-radius: 10px;
     transform: rotate(360deg);
   }
 }
 
 @-webkit-keyframes sharp {
-  .sharp-keyframes();
+  @include sharp-keyframes();
 }
 
 @-moz-keyframes sharp {
-  .sharp-keyframes();
+  @include sharp-keyframes();
 }
 
 @-o-keyframes sharp {
-  .sharp-keyframes();
+  @include sharp-keyframes();
 }
 
 @keyframes sharp {
-  .sharp-keyframes();
+  @include sharp-keyframes();
 }

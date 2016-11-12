@@ -5,23 +5,23 @@
 .pagination {
   position: relative;
   display: block;
-  background: @pagination-bg;
-  color: @pagination-color;
+  background: $pagination-bg;
+  color: $pagination-color;
   padding: 0;
   display: inline-block;
-  border-radius: @pagination-border-radius;
+  border-radius: $pagination-border-radius;
   word-spacing: -0.5px;
 
-  @media (min-width: @screen-sm-min) {
+  @media (min-width: $screen-sm-min) {
     display: inline-block;
   }
 
-  @media (max-width: @screen-xs-max) {
+  @media (max-width: $screen-xs-max) {
     height: 41px;
     padding: 0 55px 0 52px;
     overflow: auto;
     white-space: nowrap;
-    border-radius: @pagination-border-radius;
+    border-radius: $pagination-border-radius;
   }
 
   li {
@@ -37,16 +37,16 @@
     // Pseudos and states
     &.active {
       > a, > span {
-        background-color: @pagination-hover-bg;
-        color: @inverse;
-        border-color: mix(@pagination-bg, white, 80%);
+        background-color: $pagination-hover-bg;
+        color: $inverse;
+        border-color: mix($pagination-bg, white, 80%);
 
         &,
         &:hover,
         &:focus {
-          background-color: @pagination-hover-bg;
-          color: @pagination-color;
-          border-color: mix(@pagination-bg, white, 80%);
+          background-color: $pagination-hover-bg;
+          color: $pagination-color;
+          border-color: mix($pagination-bg, white, 80%);
         }
       }
       &.previous,
@@ -57,8 +57,8 @@
           &,
           &:hover,
           &:focus {
-            background-color: @pagination-hover-bg;
-            color: @pagination-color;
+            background-color: $pagination-hover-bg;
+            color: $pagination-color;
           }
         }
       }
@@ -66,7 +66,7 @@
     &:first-child {
       > a,
       > span {
-        border-radius: @pagination-border-radius 0 0 @pagination-border-radius;
+        border-radius: $pagination-border-radius 0 0 $pagination-border-radius;
         border-left: none;
       }
       &.previous + li {
@@ -84,7 +84,7 @@
         &,
         &:hover,
         &:focus {
-          border-radius: 0 @pagination-border-radius @pagination-border-radius 0;
+          border-radius: 0 $pagination-border-radius $pagination-border-radius 0;
         }
       }
     }
@@ -92,8 +92,8 @@
     &.next {
       > a,
       > span {
-        border-right: 2px solid mix(@pagination-bg, white, 66%);
-        font-size: floor((@component-font-size-base * 1.067)); // ~16px
+        border-right: 2px solid mix($pagination-bg, white, 66%);
+        font-size: floor(($component-font-size-base * 1.067)); // ~16px
         min-width: auto;
         padding: 12px 17px;
         background-color: transparent;
@@ -108,34 +108,34 @@
     &.disabled {
       > a,
       > span {
-        color: @pagination-color;
-        background-color: fade(@inverse, 30%);
-        border-right-color: mix(@pagination-bg, white, 80%);
-        cursor: @cursor-disabled;
+        color: $pagination-color;
+        background-color: fade($inverse, 30%);
+        border-right-color: mix($pagination-bg, white, 80%);
+        cursor: $cursor-disabled;
 
         &:hover,
         &:focus,
         &:active {
-          background-color: fade(@inverse, 40%);
-          color: @pagination-color;
+          background-color: fade($inverse, 40%);
+          color: $pagination-color;
         }
       }
     }
 
-    @media (max-width: @screen-xs-max) {
+    @media (max-width: $screen-xs-max) {
       &.next,
       &.previous {
-        background-color: @pagination-bg;
+        background-color: $pagination-bg;
         position: absolute;
         right: 0;
         top: 0;
         z-index: 10;
-        border-radius: 0 @pagination-border-radius @pagination-border-radius 0;
+        border-radius: 0 $pagination-border-radius $pagination-border-radius 0;
       }
       &.previous {
         left: 0;
         right: auto;
-        border-radius: @pagination-border-radius 0 0 @pagination-border-radius;
+        border-radius: $pagination-border-radius 0 0 $pagination-border-radius;
       }
     }
 
@@ -145,9 +145,9 @@
       display: inline-block;
       background: transparent;
       border: none;
-      border-left: 2px solid mix(@pagination-bg, white, 66%);
-      color: @inverse;
-      font-size: ceil((@component-font-size-base * 0.933)); // ~14px
+      border-left: 2px solid mix($pagination-bg, white, 66%);
+      color: $inverse;
+      font-size: ceil(($component-font-size-base * 0.933)); // ~14px
       line-height: 16px;
       min-height: 41px;
       min-width: 41px;
@@ -158,12 +158,12 @@
 
       &:hover,
       &:focus {
-        background-color: @pagination-hover-bg;
-        color: @pagination-color;
+        background-color: $pagination-hover-bg;
+        color: $pagination-color;
       }
       &:active {
-        background-color: @pagination-hover-bg;
-        color: @pagination-color;
+        background-color: $pagination-hover-bg;
+        color: $pagination-color;
       }
     }
   }
@@ -173,13 +173,13 @@
     &.previous,
     &.next {
       margin-right: 8px;
-      font-size: ceil((@component-font-size-base * 0.933)); // ~14px
+      font-size: ceil(($component-font-size-base * 0.933)); // ~14px
       line-height: 1.429; // ~20px
       padding-left: 23px;
       padding-right: 23px;
 
       [class*="fui-"] {
-        font-size: @icon-normal;
+        font-size: $icon-normal;
         margin-left: -2px;
         margin-top: -2px;
       }
@@ -198,7 +198,7 @@
 
   // Responsive
   // --------------------------------------
-  @media (max-width: @screen-xs-max) {
+  @media (max-width: $screen-xs-max) {
     & {
       > .btn {
         display: block;
@@ -206,35 +206,35 @@
         width: 50%;
 
         &:first-child {
-          border-bottom: 2px solid mix(@pagination-bg, white, 80%);
-          border-radius: @pagination-border-radius 0 0;
+          border-bottom: 2px solid mix($pagination-bg, white, 80%);
+          border-radius: $pagination-border-radius 0 0;
 
-          &.btn-primary { border-bottom-color: mix(@brand-secondary, white, 80%); }
-          &.btn-danger  { border-bottom-color: mix(@brand-danger, white, 80%); }
-          &.btn-warning { border-bottom-color: mix(@brand-warning, white, 80%); }
-          &.btn-success { border-bottom-color: mix(@brand-success, white, 80%); }
-          &.btn-info    { border-bottom-color: mix(@brand-info, white, 80%); }
-          &.btn-inverse { border-bottom-color: mix(@brand-primary, white, 80%); }
+          &.btn-primary { border-bottom-color: mix($brand-secondary, white, 80%); }
+          &.btn-danger  { border-bottom-color: mix($brand-danger, white, 80%); }
+          &.btn-warning { border-bottom-color: mix($brand-warning, white, 80%); }
+          &.btn-success { border-bottom-color: mix($brand-success, white, 80%); }
+          &.btn-info    { border-bottom-color: mix($brand-info, white, 80%); }
+          &.btn-inverse { border-bottom-color: mix($brand-primary, white, 80%); }
           > [class*="fui"] { margin-left: -20px; }
         }
         & + ul {
           padding: 0;
           text-align: center;
-          border-radius: 0 0 @pagination-border-radius @pagination-border-radius;
+          border-radius: 0 0 $pagination-border-radius $pagination-border-radius;
         }
         & + ul + .btn {
-          border-bottom: 2px solid mix(@pagination-bg, white, 80%);
+          border-bottom: 2px solid mix($pagination-bg, white, 80%);
           position: absolute;
           right: 0;
           top: 0;
-          border-radius: 0 @pagination-border-radius 0 0;
+          border-radius: 0 $pagination-border-radius 0 0;
 
-          &.btn-primary { border-bottom-color: mix(@brand-secondary, white, 80%); }
-          &.btn-danger  { border-bottom-color: mix(@brand-danger, white, 80%); }
-          &.btn-warning { border-bottom-color: mix(@brand-warning, white, 80%); }
-          &.btn-success { border-bottom-color: mix(@brand-success, white, 80%); }
-          &.btn-info    { border-bottom-color: mix(@brand-info, white, 80%); }
-          &.btn-inverse { border-bottom-color: mix(@brand-primary, white, 80%); }
+          &.btn-primary { border-bottom-color: mix($brand-secondary, white, 80%); }
+          &.btn-danger  { border-bottom-color: mix($brand-danger, white, 80%); }
+          &.btn-warning { border-bottom-color: mix($brand-warning, white, 80%); }
+          &.btn-success { border-bottom-color: mix($brand-success, white, 80%); }
+          &.btn-info    { border-bottom-color: mix($brand-info, white, 80%); }
+          &.btn-inverse { border-bottom-color: mix($brand-primary, white, 80%); }
           > [class*="fui"] { margin-right: -20px; }
         }
       }
@@ -254,18 +254,18 @@
 
 // Alternate Colors
 // --------------------------------------------------
-.pagination-danger  { .pagination-variant(@brand-danger, @btn-danger-hover-bg, @btn-danger-active-bg); }
-.pagination-success { .pagination-variant(@brand-success, @btn-success-hover-bg, @btn-success-active-bg); }
-.pagination-warning { .pagination-variant(@brand-warning, @btn-warning-hover-bg, @btn-warning-active-bg); }
-.pagination-info    { .pagination-variant(@brand-info, @btn-info-hover-bg, @btn-info-active-bg); }
-.pagination-inverse { .pagination-variant(@brand-primary, @btn-inverse-hover-bg, @btn-inverse-active-bg); }
+.pagination-danger  { .pagination-variant($brand-danger, $btn-danger-hover-bg, $btn-danger-active-bg); }
+.pagination-success { .pagination-variant($brand-success, $btn-success-hover-bg, $btn-success-active-bg); }
+.pagination-warning { .pagination-variant($brand-warning, $btn-warning-hover-bg, $btn-warning-active-bg); }
+.pagination-info    { .pagination-variant($brand-info, $btn-info-hover-bg, $btn-info-active-bg); }
+.pagination-inverse { .pagination-variant($brand-primary, $btn-inverse-hover-bg, $btn-inverse-active-bg); }
 
 // Ultra minimal pagination
 // --------------------------------------------------
 .pagination-minimal {
   > li {
     &:first-child {
-      border-radius: @pagination-border-radius 0 0 @pagination-border-radius;
+      border-radius: $pagination-border-radius 0 0 $pagination-border-radius;
 
       &.previous + li {
         > a,
@@ -275,7 +275,7 @@
       }
     }
     &:last-child {
-      border-radius: 0 @pagination-border-radius @pagination-border-radius 0;
+      border-radius: 0 $pagination-border-radius $pagination-border-radius 0;
     }
     &.previous,
     &.next {
@@ -283,18 +283,18 @@
       > span {
         background: transparent;
         border: none;
-        border-right: 2px solid mix(@pagination-bg, white, 66%);
+        border-right: 2px solid mix($pagination-bg, white, 66%);
         margin: 0 9px 0 0;
         padding: 12px 17px;
-        border-radius: @pagination-border-radius 0 0 @pagination-border-radius;
+        border-radius: $pagination-border-radius 0 0 $pagination-border-radius;
 
         &,
         &:hover,
         &:focus {
-          border-color: mix(@pagination-bg, white, 66%) !important;
+          border-color: mix($pagination-bg, white, 66%) !important;
         }
 
-        @media (max-width: @screen-xs-max) {
+        @media (max-width: $screen-xs-max) {
           margin-right: 0;
         }
       }
@@ -304,31 +304,31 @@
 
       > a,
       > span {
-        border-left: 2px solid mix(@pagination-bg, white, 66%);
+        border-left: 2px solid mix($pagination-bg, white, 66%);
         border-right: none;
         margin: 0;
-        border-radius: 0 @pagination-border-radius @pagination-border-radius 0;
+        border-radius: 0 $pagination-border-radius $pagination-border-radius 0;
       }
     }
     &.active {
       > a,
       > span {
-        background-color: @inverse;
-        border-color: @inverse;
+        background-color: $inverse;
+        border-color: $inverse;
         border-width: 2px !important;
-        color: @pagination-bg;
+        color: $pagination-bg;
         margin: 10px 5px 9px;
 
         &:hover,
         &:focus {
-          background-color: @inverse;
-          border-color: @inverse;
-          color: @pagination-bg;
+          background-color: $inverse;
+          border-color: $inverse;
+          color: $pagination-bg;
         }
       }
       &.previous,
       &.next {
-        border-color: mix(@pagination-bg, white, 66%);
+        border-color: mix($pagination-bg, white, 66%);
       }
       &.previous {
         margin-right: 6px;
@@ -338,9 +338,9 @@
     // Link
     > a,
     > span {
-      background: @inverse;
-      border: 5px solid @pagination-bg;
-      color: @inverse;
+      background: $inverse;
+      border: 5px solid $pagination-bg;
+      color: $inverse;
       line-height: 16px;
       margin: 7px 2px 6px;
       min-width: 0;
@@ -352,14 +352,14 @@
 
       &:hover,
       &:focus {
-        background-color: @pagination-hover-bg;
-        border-color: @pagination-hover-bg;
-        color: @inverse;
+        background-color: $pagination-hover-bg;
+        border-color: $pagination-hover-bg;
+        color: $inverse;
         transition: background .2s ease-out, border-color .2s ease-out, color .2s ease-out;
       }
       &:active {
-        background-color: mix(@brand-secondary, black, 85%);
-        border-color: mix(@brand-secondary, black, 85%);
+        background-color: mix($brand-secondary, black, 85%);
+        border-color: mix($brand-secondary, black, 85%);
       }
     }
   }
@@ -368,7 +368,7 @@
 // Text only pagination (no graphics)
 // --------------------------------------------------
 .pagination-plain {
-  font-size: floor((@component-font-size-base * 1.067)); // ~16px
+  font-size: floor(($component-font-size-base * 1.067)); // ~16px
   font-weight: 700;
   list-style-type: none;
   margin: 0 0 20px;
@@ -386,7 +386,7 @@
     }
     &.active {
       > a {
-        color: mix(@gray-light, white, 66%);
+        color: mix($gray-light, white, 66%);
       }
     }
     > a {
@@ -394,7 +394,7 @@
     }
   }
 
-  @media (max-width: @screen-xs-min) {
+  @media (max-width: $screen-xs-min) {
     overflow: hidden;
     text-align: center;
 
@@ -414,7 +414,7 @@
     }
   }
 
-  @media (min-width: @screen-sm-min) {
+  @media (min-width: $screen-sm-min) {
     height: auto;
   }
 }
@@ -435,13 +435,13 @@
       &:first-child {
         > a,
         > span {
-          border-radius: @pagination-border-radius @pagination-border-radius 0 0;
+          border-radius: $pagination-border-radius $pagination-border-radius 0 0;
         }
       }
       &:last-child {
         > a,
         > span {
-          border-radius: 0 0 @pagination-border-radius @pagination-border-radius !important;
+          border-radius: 0 0 $pagination-border-radius $pagination-border-radius !important;
         }
       }
       > a,

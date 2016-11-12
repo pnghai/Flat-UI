@@ -7,19 +7,19 @@
 
 .btn {
   border: none;
-  font-size: @btn-font-size-base;
-  font-weight: @btn-font-weight;
-  line-height: @btn-line-height-base;
-  border-radius: @border-radius-base;
+  font-size: $btn-font-size-base;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height-base;
+  border-radius: $border-radius-base;
   padding: 10px 15px;
   -webkit-font-smoothing: subpixel-antialiased;
   transition: border .25s linear, color .25s linear, background-color .25s linear;
-  
+
 
   &:hover,
   &:focus {
     outline: none;
-    color: @btn-default-color;    
+    color: $btn-default-color;
   }
 
   &:active,
@@ -35,10 +35,10 @@
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    background-color: @btn-link-disabled-color;
-    color: fade(@btn-default-color, 75%);
+    background-color: $btn-link-disabled-color;
+    color: fade($btn-default-color, 75%);
     .opacity(.7);
-    cursor: @cursor-disabled;
+    cursor: $cursor-disabled;
   }
 
   // Button icons
@@ -47,44 +47,44 @@
     position: relative;
     line-height: 1;
     top: 1px;
-    
+
     .btn-xs& {
       font-size: 11px;
       top: 0;
     }
     .btn-hg& {
       top: 2px;
-    } 
-  }  
+    }
+  }
 }
 
 // Alternate buttons
 // --------------------------------------------------
 
 .btn-default {
-  .button-variant(@btn-default-color, @btn-default-bg, @btn-hover-bg, @btn-active-bg);
+  .button-variant($btn-default-color, $btn-default-bg, $btn-hover-bg, $btn-active-bg);
 }
 .btn-primary {
-  .button-variant(@btn-default-color, @brand-secondary, @btn-primary-hover-bg, @btn-primary-active-bg);
+  .button-variant($btn-default-color, $brand-secondary, $btn-primary-hover-bg, $btn-primary-active-bg);
 }
 .btn-info    {
-  .button-variant(@btn-default-color, @brand-info, @btn-info-hover-bg, @btn-info-active-bg);
+  .button-variant($btn-default-color, $brand-info, $btn-info-hover-bg, $btn-info-active-bg);
 }
 .btn-danger  {
-  .button-variant(@btn-default-color, @brand-danger, @btn-danger-hover-bg, @btn-danger-active-bg);
+  .button-variant($btn-default-color, $brand-danger, $btn-danger-hover-bg, $btn-danger-active-bg);
 }
 .btn-success {
-  .button-variant(@btn-default-color, @brand-success, @btn-success-hover-bg, @btn-success-active-bg);
+  .button-variant($btn-default-color, $brand-success, $btn-success-hover-bg, $btn-success-active-bg);
 }
 .btn-warning {
-  .button-variant(@btn-default-color, @brand-warning, @btn-warning-hover-bg, @btn-warning-active-bg);
+  .button-variant($btn-default-color, $brand-warning, $btn-warning-hover-bg, $btn-warning-active-bg);
 }
 .btn-inverse {
-  .button-variant(@btn-default-color, @brand-primary, @btn-inverse-hover-bg, @btn-inverse-active-bg);    
+  .button-variant($btn-default-color, $brand-primary, $btn-inverse-hover-bg, $btn-inverse-active-bg);
 }
 .btn-embossed {
   box-shadow: inset 0 -2px 0 fade(black, 15%);
-  
+
   &.active,
   &:active {
     box-shadow: inset 0 2px 0 fade(black, 15%);
@@ -95,18 +95,18 @@
   padding-left: 30px;
   padding-right: 30px;
 }
-  
- 
+
+
 // Link buttons
 // -------------------------
 
 // Make a button look and behave like a link
 .btn-link {
-  color: @link-color;
+  color: $link-color;
 
   &:hover,
   &:focus {
-    color: @link-hover-color;
+    color: $link-hover-color;
     text-decoration: underline;
     background-color: transparent;
   }
@@ -114,29 +114,29 @@
   fieldset[disabled] & {
     &:hover,
     &:focus {
-      color: @btn-link-disabled-color;
+      color: $btn-link-disabled-color;
       text-decoration: none;
     }
   }
-} 
-  
+}
+
 
 // Button sizes
 // --------------------------------------------------
 
 .btn-hg {
-  .button-size(13px, 20px, @btn-font-size-hg, @btn-line-height-hg, @border-radius-large);
+  .button-size(13px, 20px, $btn-font-size-hg, $btn-line-height-hg, $border-radius-large);
 }
 .btn-lg {
-  .button-size(10px, 19px, @btn-font-size-lg, @btn-line-height-lg, @border-radius-large);
+  .button-size(10px, 19px, $btn-font-size-lg, $btn-line-height-lg, $border-radius-large);
 }
 .btn-sm {
-  .button-size(9px, 13px, @btn-font-size-sm, @btn-line-height-sm, @border-radius-base);
+  .button-size(9px, 13px, $btn-font-size-sm, $btn-line-height-sm, $border-radius-base);
 }
 .btn-xs {
-  .button-size(6px, 9px, @btn-font-size-xs, @btn-line-height-xs, @border-radius-small);
-}  
-  
+  .button-size(6px, 9px, $btn-font-size-xs, $btn-line-height-xs, $border-radius-small);
+}
+
 
 // Button tip
 .btn-tip {
@@ -156,26 +156,26 @@
 // --------------------------------------------------
 
 [class*="btn-social-"] {
-  .button-size(10px, 15px, @btn-social-font-size-base, @btn-social-line-height-base, @border-radius-base);
+  .button-size(10px, 15px, $btn-social-font-size-base, $btn-social-line-height-base, $border-radius-base);
 }
 
 // Set the backgrounds
 // -------------------------
 .btn-social-pinterest {
-  .social-button-variant(@btn-default-color, @social-pinterest);
+  .social-button-variant($btn-default-color, $social-pinterest);
 }
 .btn-social-linkedin {
-  .social-button-variant(@btn-default-color, @social-linkedin)
+  .social-button-variant($btn-default-color, $social-linkedin)
 }
 .btn-social-stumbleupon {
-  .social-button-variant(@btn-default-color, @social-stumbleupon);
+  .social-button-variant($btn-default-color, $social-stumbleupon);
 }
 .btn-social-googleplus {
-  .social-button-variant(@btn-default-color, @social-googleplus);
+  .social-button-variant($btn-default-color, $social-googleplus);
 }
 .btn-social-facebook {
-  .social-button-variant(@btn-default-color, @social-facebook);
+  .social-button-variant($btn-default-color, $social-facebook);
 }
 .btn-social-twitter {
-  .social-button-variant(@btn-default-color, @social-twitter);
+  .social-button-variant($btn-default-color, $social-twitter);
 }

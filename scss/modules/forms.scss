@@ -11,10 +11,10 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: @line-height-computed / 2;
-  font-size: (@component-font-size-base * 1.6); // ~24px
+  margin-bottom: $line-height-computed / 2;
+  font-size: ($component-font-size-base * 1.6); // ~24px
   line-height: inherit;
-  color: @legend-color;
+  color: $legend-color;
   border-bottom: none;
 }
 
@@ -22,7 +22,7 @@ legend {
 
 // Textarea
 textarea {
-  font-size: ceil((@font-size-base * 1.071)); // ~15px
+  font-size: ceil(($font-size-base * 1.071)); // ~15px
   line-height: 24px;
   padding: 5px 11px;
 }
@@ -36,7 +36,7 @@ input[type="search"] {
 // Label
 label {
   font-weight: normal;
-  font-size: @component-font-size-base;
+  font-size: $component-font-size-base;
   line-height: 2.3; // ~36px
 }
 
@@ -45,7 +45,7 @@ label {
 // Placeholder text gets special styles because when browsers invalidate entire
 // lines if it doesn't understand a selector/
 .form-control {
-  .placeholder(desaturate(lighten(@brand-primary, 45%), 15%));
+  .placeholder(desaturate(lighten($brand-primary, 45%), 15%));
 }
 
 // Common form controls
@@ -71,14 +71,14 @@ label {
 // input[type="color"]
 
 .form-control {
-  border: 2px solid @gray-light;
-  color: @brand-primary;
-  font-family: @font-family-base;
-  font-size: @input-font-size-base;
-  line-height: @input-line-height-base;
+  border: 2px solid $gray-light;
+  color: $brand-primary;
+  font-family: $font-family-base;
+  font-size: $input-font-size-base;
+  line-height: $input-line-height-base;
   padding: 8px 12px;
   height: 42px;
-  border-radius: @input-border-radius;
+  border-radius: $input-border-radius;
   box-shadow: none;
   transition: border .25s linear, color .25s linear, background-color .25s linear;
 
@@ -92,9 +92,9 @@ label {
   &[disabled],
   &[readonly],
   fieldset[disabled] & {
-    background-color: @input-bg-disabled;
-    border-color: mix(@gray, white, 40%);
-    color: mix(@gray, white, 40%);
+    background-color: $input-bg-disabled;
+    border-color: mix($gray, white, 40%);
+    color: mix($gray, white, 40%);
     cursor: default;
     .opacity(.7);
   }
@@ -104,28 +104,28 @@ label {
     border-color: transparent;
 
     &:hover {
-      border-color: @gray-light;
+      border-color: $gray-light;
     }
     &:focus {
-      border-color: @brand-secondary;
+      border-color: $brand-secondary;
     }
   }
 }
 
 // Form control sizing
 .input-sm,
-.form-group-sm .form-control {  
-  .input-size(@input-height-sm; 6px; 10px; @input-font-size-sm; @input-line-height-sm);
+.form-group-sm .form-control {
+  @include input-size($input-height-sm, 6px, 10px, $input-font-size-sm, $input-line-height-sm);
 }
 
 .input-lg,
-.form-group-lg .form-control {  
-  .input-size(@input-height-lg; 10px; 15px; @input-font-size-lg; @input-line-height-lg);
+.form-group-lg .form-control {
+  @include input-size($input-height-lg, 10px, 15px, $input-font-size-lg, $input-line-height-lg);
 }
 
 .input-hg,
-.form-group-hg .form-control {  
-  .input-size(@input-height-hg; 10px; 16px; @input-font-size-hg; @input-line-height-hg);
+.form-group-hg .form-control {
+  @include input-size($input-height-hg, 10px, 16px, $input-font-size-hg, $input-line-height-hg);
 }
 
 // Form control feedback states
@@ -138,17 +138,17 @@ label {
   right: 2px;
   margin-top: 1px;
   line-height: 36px;
-  font-size: @input-icon-font-size;
-  color: desaturate(lighten(@brand-primary, 45%), 15%);
+  font-size: $input-icon-font-size;
+  color: desaturate(lighten($brand-primary, 45%), 15%);
   background-color: transparent;
   padding: 0 12px 0 0;
-  border-radius: @input-border-radius;
+  border-radius: $input-border-radius;
   pointer-events: none;
 }
 
-.input-hg + .form-control-feedback, 
+.input-hg + .form-control-feedback,
 .control-feedback-hg {
-  font-size: @input-icon-font-size-hg;
+  font-size: $input-icon-font-size-hg;
   line-height: 48px;
   padding-right: 16px;
   width: auto;
@@ -156,7 +156,7 @@ label {
 }
 .input-lg + .form-control-feedback,
 .control-feedback-lg {
-  font-size: @input-icon-font-size-lg;
+  font-size: $input-icon-font-size-lg;
   line-height: 40px;
   width: auto;
   height: 40px;
@@ -172,21 +172,21 @@ label {
 
 // Feedback states
 .has-success {
-  .form-control-validation(@brand-success; @brand-success);
+  .form-control-validation($brand-success, $brand-success);
 }
 .has-warning {
-  .form-control-validation(@brand-warning; @brand-warning);
+  .form-control-validation($brand-warning, $brand-warning);
 }
 .has-error {
-  .form-control-validation(@brand-danger; @brand-danger);
+  .form-control-validation($brand-danger, $brand-danger);
 }
 
 .form-control[disabled] + .form-control-feedback,
 .form-control[readonly] + .form-control-feedback,
 fieldset[disabled] .form-control + .form-control-feedback,
 .form-control.disabled + .form-control-feedback {
-  cursor: @cursor-disabled;
-  color: mix(@gray, white, 40%);
+  cursor: $cursor-disabled;
+  color: mix($gray, white, 40%);
   background-color: transparent;
   .opacity(.7);
 }
@@ -198,9 +198,9 @@ fieldset[disabled] .form-control + .form-control-feedback,
 // below a form control. Use for general help, formatting, or instructional text.
 
 .help-block {
-  font-size: ceil((@component-font-size-base * 0.933));
+  font-size: ceil(($component-font-size-base * 0.933));
   margin-bottom: 5px;
-  color: mix(@brand-primary, @gray-light, 60%);
+  color: mix($brand-primary, $gray-light, 60%);
 }
 
 // Form groups
@@ -234,7 +234,7 @@ fieldset[disabled] .form-control + .form-control-feedback,
 
   // Reset spacing and right align labels, but scope to media queries so that
   // labels on narrow viewports stack the same as a default form example.
-  @media (min-width: @screen-sm-min) {
+  @media (min-width: $screen-sm-min) {
     .control-label {
       padding-top: 3px;
       padding-bottom: 3px;
@@ -256,9 +256,9 @@ fieldset[disabled] .form-control + .form-control-feedback,
   // Quick utility class for applying `.input-lg` and `.input-sm` styles to the
   // inputs and labels within a `.form-group`.
   .form-group-hg {
-    @media (min-width: @screen-sm-min) {
+    @media (min-width: $screen-sm-min) {
       .control-label {
-        font-size: @input-font-size-hg;
+        font-size: $input-font-size-hg;
         padding-top: 2px;
         padding-bottom: 0;
       }
@@ -268,18 +268,18 @@ fieldset[disabled] .form-control + .form-control-feedback,
     }
   }
   .form-group-lg {
-    @media (min-width: @screen-sm-min) {
+    @media (min-width: $screen-sm-min) {
       .control-label {
-        font-size: @input-font-size-lg;
+        font-size: $input-font-size-lg;
         padding-top: 3px;
         padding-bottom: 2px;
       }
     }
   }
   .form-group-sm {
-    @media (min-width: @screen-sm-min) {
+    @media (min-width: $screen-sm-min) {
       .control-label {
-        font-size: @input-font-size-sm;
+        font-size: $input-font-size-sm;
         padding-top: 2px;
         padding-bottom: 2px;
       }

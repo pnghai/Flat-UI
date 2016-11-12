@@ -3,12 +3,12 @@
 // --------------------------------------------------
 
 // Module color variable
-@share-color: mix(@brand-primary, @inverse, 8%);
+$share-color: mix($brand-primary, $inverse, 8%);
 
 .share {
-  background-color: @share-color;
+  background-color: $share-color;
   position: relative;
-  border-radius: @border-radius-large;
+  border-radius: $border-radius-large;
 
   ul {
     list-style-type: none;
@@ -16,7 +16,7 @@
     padding: 15px;
   }
   li {
-    font-size: @component-font-size-base;
+    font-size: $component-font-size-base;
     line-height: 1.4;
     padding-top: 11px;
     .clearfix();
